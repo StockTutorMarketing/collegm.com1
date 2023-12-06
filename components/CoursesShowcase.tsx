@@ -49,18 +49,18 @@ function CoursesShowcase({ }: Props) {
             <div className='md:text-center'>
                 <p className='text-green-800 font-semibold text-sm'>Brand New</p>
 
-                <h2 className='text-3xl font-semibold text-left text-slate-800 mt-6'>Courses</h2>
+                <h2 className='text-3xl font-semibold text-slate-800 mt-6'>Courses</h2>
 
                 <p className='text-slate-700 mt-8 md:max-w-md md:text-lg mx-auto'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.</p>
             </div>
 
-            <div className='mt-12 space-y-5'>
+            <div className='mt-12 gap-5 grid sm:grid-cols-2 lg:grid-cols-3'>
                 {coursesCard.map((course) => (
                     <div
                         key={course.id}
                         className='bg-white rounded-lg'
                     >
-                        <div className='relative h-64 w-[21rem]'>
+                        <div className='relative h-64 w-[21rem] sm:h-56 sm:w-72 md:h-[17rem] md:w-[22rem] lg:h-60 lg:w-[19.6rem] xl:w-[25rem] xl:h-[19rem]'>
                             <Image
                                 className='absolute max-w-full h-auto object-contain rounded-t-lg'
                                 src={course.image}
