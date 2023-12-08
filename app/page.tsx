@@ -1,9 +1,9 @@
 import Banner from '@/components/Banner'
-import CoursesShowcase from '@/components/CoursesShowcase';
-import Header from '@/components/Header'
-import Image from 'next/image'
+import CommunityNumbers from '@/components/CommunityNumbers';
+import ExcellentTeachers from '@/components/ExcellentTeachers';
+import FeaturedCourses from '@/components/FeaturedCourses';
+import Testimonials from '@/components/Testimonials';
 import Marquee from "react-fast-marquee";
-
 
 export default function Home() {
   return (
@@ -15,7 +15,13 @@ export default function Home() {
 
       <Banner />
 
-      <CoursesShowcase />
+      <FeaturedCourses />
+
+      <CommunityNumbers />
+      
+      <Testimonials />
+
+      <ExcellentTeachers />
     </main>
   )
 }
