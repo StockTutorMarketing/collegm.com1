@@ -39,7 +39,7 @@ function Banner({ }: Props) {
         <div className='max-w-7xl mx-auto p-5'>
             <div className=''>
                 <div className='flex flex-col md:items-center md:flex-row md:justify-between'>
-                    <h1 className='text-5xl lg:text-8xl leading-tight lg:leading-snug font-semibold overflow-hidden'>
+                    <h1 className='text-5xl lg:text-8xl leading-tight lg:leading-snug font-semibold overflow-hidden dark:text-zinc-100'>
                         Learn
                         <br />
                         <span className='text-[#5280e2]'>{text}</span>
@@ -57,21 +57,21 @@ function Banner({ }: Props) {
                 </div>
 
                 <div className='my-8 space-y-5 lg:flex items-center justify-between lg:space-y-0'>
-                    <div className='lg:max-w-xs'>
-                        <h3 className='text-lg text-slate-800 font-semibold text-uppercase'>ACTIVE COMMUNITY</h3>
-                        <p className='text-slate-800 text-sm'>
+                    <div className='lg:max-w-xs text-slate-800 dark:text-zinc-100'>
+                        <h3 className='text-lg font-semibold text-uppercase'>ACTIVE COMMUNITY</h3>
+                        <p className=' text-sm'>
                             Engagement and Learning Community is the cornerstone of learning online. Going through a course alongside a group of peers is the best way to achieve transformation.
                         </p>
                     </div>
-                    <div className='lg:max-w-xs'>
-                        <h3 className='text-lg text-slate-800 font-semibold text-uppercase'>EXPERT</h3>
-                        <p className='text-slate-800 text-sm'>
+                    <div className='lg:max-w-xs text-slate-800 dark:text-zinc-100'>
+                        <h3 className='text-lg font-semibold text-uppercase'>EXPERT</h3>
+                        <p className='text-sm'>
                             Learn Future Relevant Skills from Worlds best Experts Learn 21st century relevant skills for grabbing the next big opportunity in your life and career.
                         </p>
                     </div>
-                    <div className='lg:max-w-xs'>
-                        <h3 className='text-lg text-slate-800 font-semibold text-uppercase'>LIVE & ACTIVE LEARNING</h3>
-                        <p className='text-slate-800 text-sm'>
+                    <div className='lg:max-w-xs text-slate-800 dark:text-zinc-100'>
+                        <h3 className='text-lg font-semibold text-uppercase'>LIVE & ACTIVE LEARNING</h3>
+                        <p className='text-sm'>
                             The best way to learn is by doing. Engage in hands on projects and assignments to practically implement what you learn.
                         </p>
                     </div>

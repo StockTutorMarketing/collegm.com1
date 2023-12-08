@@ -7,7 +7,7 @@ import Marquee from "react-fast-marquee";
 
 export default function Home() {
   return (
-    <main className="bg-gray-200">
+    <main className="bg-gray-200 dark:bg-zinc-800">
 
       <Marquee className='bg-yellow-400 p-5'>
         Get All stock market courses @discounted price 🔥 Avail Live Class Benifits 🔥

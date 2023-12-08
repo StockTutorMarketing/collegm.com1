@@ -6,9 +6,9 @@ type Props = {}
 
 function Footer({ }: Props) {
     return (
-        <footer className='max-w-7xl mx-auto p-5'>
-            <div className='flex flex-col items-center justify-center'>
-                <div className='gap-x-8 gap-y-4 flex flex-wrap items-center justify-between md:justify-around font-medium'>
+        <footer className='p-5 dark:bg-zinc-800 border-t dark:border-zinc-700'>
+            <div className='flex flex-col items-center justify-center max-w-7xl mx-auto'>
+                <div className='gap-x-8 gap-y-4 flex flex-wrap items-center justify-between md:justify-around font-medium dark:text-zinc-100'>
                     <Link
                         href={'/'}
                     >
@@ -41,13 +41,13 @@ function Footer({ }: Props) {
                     </Link>
                 </div>
                 <div className='mt-5'>
-                    <SocialIcon url='https://twitter.com/ColleGm_' bgColor='transparent' fgColor='black' />
-                    <SocialIcon url='https://www.linkedin.com/company/collegm/' bgColor='transparent' fgColor='black' />
-                    <SocialIcon url='https://www.facebook.com/people/ColleGm/100089120164013/' bgColor='transparent' fgColor='black' />
-                    <SocialIcon url='https://www.instagram.com/collegm_official/?next=%2Fcollegm_bx%2F' bgColor='transparent' fgColor='black' />
+                    <SocialIcon url='https://twitter.com/ColleGm_' bgColor='transparent' fgColor='grey' />
+                    <SocialIcon url='https://www.linkedin.com/company/collegm/' bgColor='transparent' fgColor='grey' />
+                    <SocialIcon url='https://www.facebook.com/people/ColleGm/100089120164013/' bgColor='transparent' fgColor='grey' />
+                    <SocialIcon url='https://www.instagram.com/collegm_official/?next=%2Fcollegm_bx%2F' bgColor='transparent' fgColor='grey' />
                 </div>
 
-                <p className='text-slate-500 mt-5'>© {new Date().getFullYear()} Collegm, Inc. All rights reserved.</p>
+                <p className='text-slate-500 dark:text-zinc-300 mt-5'>© {new Date().getFullYear()} Collegm, Inc. All rights reserved.</p>
             </div>
         </footer>
     )

@@ -72,7 +72,7 @@ export default function Courses({ }: Props) {
   ];
 
   return (
-    <div className='bg-gray-200'>
+    <div className='bg-gray-200 dark:bg-zinc-800'>
       <div className='max-w-7xl mx-auto p-5'>
         <div className='gap-x-5 gap-y-8 grid sm:grid-cols-2 lg:grid-cols-3'>
           {courses.map((course) => (
