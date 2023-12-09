@@ -30,7 +30,7 @@ function Header({ }: Props) {
                         className='relative h-12 w-32 lg:h-16 lg:w-40 cursor-pointer'
                     >
                         <Image
-                            className='absolute max-w-full h-auto object-contain'
+                            className='absolute max-w-full h-auto object-cover'
                             src={'/images/CollegeGm_Logo.png'}
                             alt=''
                             fill
@@ -104,7 +104,7 @@ function Header({ }: Props) {
 
                     <Link
                         href={'/courses'}
-                        className='text-sm button dark:text-zinc-100'
+                        className='text-xs button dark:text-zinc-100'
                     >
                         Become A Mentor -&gt;
                     </Link>

@@ -8,7 +8,7 @@ function Footer({ }: Props) {
     return (
         <footer className='p-5 dark:bg-zinc-800 border-t dark:border-zinc-700'>
             <div className='flex flex-col items-center justify-center max-w-7xl mx-auto'>
-                <div className='gap-x-8 gap-y-4 flex flex-wrap items-center justify-between md:justify-around font-medium dark:text-zinc-100'>
+                <div className='gap-x-8 gap-y-4 flex flex-wrap items-center justify-between md:justify-around font-medium text-sm dark:text-zinc-100'>
                     <Link
                         href={'/'}
                     >
