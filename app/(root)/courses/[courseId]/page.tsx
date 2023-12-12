@@ -207,8 +207,8 @@ function CourseDetails({ }: Props) {
                             </TabsContent>
 
                             {/* Instructor Tab Menu */}
-                            <TabsContent value="instructor" className='flex flex-col items-center justify-center mt-5'>
-                                <div className='relative h-52 w-[21rem]'>
+                            <TabsContent value="instructor" className='flex flex-col lg:flex-row items-center justify-center mt-5 lg:gap-x-5'>
+                                <div className='relative h-52 w-[21rem] flex-shrink-0'>
                                     <Image
                                         className='absolute max-w-full h-auto object-cover rounded-lg'
                                         src={'/images/author_image.jpg'}
