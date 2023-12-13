@@ -8,9 +8,12 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
 
-type Props = {}
+type Props = {
+    values: string[]
+}
 
-function TimelineContainer({ }: Props) {
+function TimelineContainer({ values }: Props) {
+    console.log(values.slice(0, values.length - 1));
     return (
         <div>
             <Timeline
@@ -21,14 +24,26 @@ function TimelineContainer({ }: Props) {
                     },
                 }}
             >
-                <TimelineItem>
-                    <TimelineSeparator>
-                        <TimelineDot sx={{ backgroundColor: '#27272a' }} />
-                        <TimelineConnector sx={{ backgroundColor: '#27272a' }} />
-                    </TimelineSeparator>
-                    <TimelineContent sx={{ fontSize: '14px' }}>1{")"} Introduction to Futures & Options</TimelineContent>
-                </TimelineItem>
-                <TimelineItem>
+                {values.slice(0, values.length - 1).map((value, i) => (
+                    <TimelineItem key={i}>
+                        <TimelineSeparator>
+                            <TimelineDot sx={{ backgroundColor: '#27272a' }} />
+                            <TimelineConnector sx={{ backgroundColor: '#27272a' }} />
+                        </TimelineSeparator>
+                        <TimelineContent sx={{ fontSize: '14px' }}>{value}</TimelineContent>
+                    </TimelineItem>
+                ))}
+
+                {/* Code For Last Point of the cirriculum */}
+                {values.slice(values.length - 1, values.length).map((value, i) => (
+                    <TimelineItem key={i}>
+                        <TimelineSeparator>
+                            <TimelineDot sx={{ backgroundColor: '#27272a' }} />
+                        </TimelineSeparator>
+                        <TimelineContent sx={{ fontSize: '14px' }}>{value}</TimelineContent>
+                    </TimelineItem>
+                ))}
+                {/* <TimelineItem>
                     <TimelineSeparator>
                         <TimelineDot sx={{ backgroundColor: '#27272a' }} />
                         <TimelineConnector sx={{ backgroundColor: '#27272a' }} />
@@ -66,10 +81,9 @@ function TimelineContainer({ }: Props) {
                 <TimelineItem>
                     <TimelineSeparator>
                         <TimelineDot sx={{ backgroundColor: '#27272a' }} />
-                        {/* <TimelineConnector sx={{ backgroundColor: '#27272a' }} /> */}
                     </TimelineSeparator>
                     <TimelineContent sx={{ fontSize: '14px' }}>7{")"} Risk Management , Mindset & Psychology , Portfolio & Business Management & Bonus Strategies +1 Live Market session</TimelineContent>
-                </TimelineItem>
+                </TimelineItem> */}
             </Timeline>
         </div>
     )

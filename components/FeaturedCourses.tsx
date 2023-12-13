@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import CoursesCard from './CoursesCard';
 import getCourses from '@/utils/getCourses';
+import ClientSideRoute from './ClientSideRoute';
 
 type Props = {}
 
@@ -20,9 +21,14 @@ async function FeaturedCourses({ }: Props) {
             </div>
 
             <div className='mt-12 gap-5 grid sm:grid-cols-2 lg:grid-cols-3'>
-                {courses.map((course: any) => (
-                    <CoursesCard key={course.id} course={course} />
-                ))}
+                {courses.map((course: any) => {
+                    if (course.isFeaturedCourse)
+                        return (
+                            <ClientSideRoute key={course._id} route={`courses/${course.slug.current}`}>
+                                <CoursesCard course={course} />
+                            </ClientSideRoute>
+                        )
+                })}
             </div>
         </div>
     )

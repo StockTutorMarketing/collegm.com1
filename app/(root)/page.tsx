@@ -5,6 +5,8 @@ import FeaturedCourses from '@/components/FeaturedCourses';
 import Testimonials from '@/components/Testimonials';
 import Marquee from "react-fast-marquee";
 
+export const revalidate = 0 // revalidate at most every hour
+
 export default function Home() {
   return (
     <main className="bg-gray-200 dark:bg-zinc-900">

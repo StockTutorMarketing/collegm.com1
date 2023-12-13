@@ -1,54 +1,14 @@
+import { urlFor } from '@/sanity';
+import { Teachers } from '@/typings';
+import getTeachers from '@/utils/getTeachers';
 import Image from 'next/image'
 import React from 'react'
 
 type Props = {}
 
-function ExcellentTeachers({ }: Props) {
+async function ExcellentTeachers({ }: Props) {
 
-    const teachers = [
-        {
-            id: 1,
-            name: 'Aseem Singhal',
-            field: 'Automatic Trading Using Python',
-            image: '/images/author_image.jpg',
-        },
-        {
-            id: 2,
-            name: 'Aseem Singhal',
-            field: 'Automatic Trading Using Python',
-            image: '/images/author_image.jpg',
-        },
-        {
-            id: 3,
-            name: 'Aseem Singhal',
-            field: 'Automatic Trading Using Python',
-            image: '/images/author_image.jpg',
-        },
-        {
-            id: 4,
-            name: 'Aseem Singhal',
-            field: 'Automatic Trading Using Python',
-            image: '/images/author_image.jpg',
-        },
-        {
-            id: 5,
-            name: 'Aseem Singhal',
-            field: 'Automatic Trading Using Python',
-            image: '/images/author_image.jpg',
-        },
-        {
-            id: 6,
-            name: 'Aseem Singhal',
-            field: 'Automatic Trading Using Python',
-            image: '/images/author_image.jpg',
-        },
-        {
-            id: 7,
-            name: 'Aseem Singhal',
-            field: 'Automatic Trading Using Python',
-            image: '/images/author_image.jpg',
-        },
-    ]
+    const teachers: Teachers[] = await getTeachers();
 
     return (
         <div className='max-w-7xl mx-auto p-5 pb-24'>
@@ -61,21 +21,20 @@ function ExcellentTeachers({ }: Props) {
             </div>
             <div className='grid justify-items-center grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-5 mt-10'>
                 {teachers.map((teacher) => (
-                    <div key={teacher.id} className='flex flex-col'>
+                    <div key={teacher?._id} className='flex flex-col'>
                         <div className='relative h-36 w-36 md:h-52 md:w-52 lg:h-60 lg:w-60'>
                             <Image
                                 className='absolute max-w-full h-auto object-cover rounded-lg'
-                                src={teacher.image}
+                                src={urlFor(teacher?.image).url()}
                                 alt=''
                                 fill
                             />
                         </div>
                         <div className='w-36 lg:w-full space-y-2 mt-3 text-left'>
-                            <h3 className='font-bold lg:text-lg dark:text-zinc-100'>{teacher.name}</h3>
-                            <p className='text-xs lg:text-sm dark:text-zinc-200'>{teacher.field}</p>
+                            <h3 className='font-bold lg:text-lg dark:text-zinc-100'>{teacher?.name}</h3>
+                            <p className='text-xs lg:text-sm dark:text-zinc-200'>{teacher?.skill}</p>
                         </div>
                     </div>
-
                 ))}
             </div>
         </div>

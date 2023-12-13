@@ -1,15 +1,16 @@
 import { urlFor } from '@/sanity'
-import getTeamMembers from '@/utils/getTeamMembers'
 import Image from 'next/image'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { TeamMembers } from '@/typings'
+import getTeamMembers from '@/utils/getTeamMembers'
 
 type Props = {}
 
-async function AboutUs({ }: Props) {
+export const revalidate = 0 // revalidate at most every hour
 
+async function AboutUs({ }: Props) {
     const teamMembers: TeamMembers[] = await getTeamMembers();
 
     return (
