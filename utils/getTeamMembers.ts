@@ -8,6 +8,6 @@ const query = groq`
 `;
 
 export default async function getTeamMembers() {
-    const projects = await sanityClient.fetch(query)
-    return projects
+    const teamMembers = await sanityClient.fetch(query)
+    return teamMembers
 }

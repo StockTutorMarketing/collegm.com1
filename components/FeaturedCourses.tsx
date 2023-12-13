@@ -1,40 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
 import CoursesCard from './CoursesCard';
+import getCourses from '@/utils/getCourses';
 
 type Props = {}
 
-function FeaturedCourses({ }: Props) {
+async function FeaturedCourses({ }: Props) {
 
-    const coursesCard = [
-        {
-            id: 1,
-            title: 'Forex Trading',
-            image: '/images/course_image.webp',
-            description: '6+ year trading experience International Mentor. Top Students are from USA, Canda, U.K, Egypt etc. 6+ year trading experience International Mentor. Top Students are from USA, Canda, U.K, Egypt etc.',
-            authorName: 'Mohd Saif',
-            joiningDate: 'August 2014',
-            authorImage: '/images/author_image.jpg',
-        },
-        {
-            id: 2,
-            title: 'Forex Trading',
-            image: '/images/course_image.webp',
-            description: '6+ year trading experience International Mentor. Top Students are from USA, Canda, U.K, Egypt etc. 6+ year trading experience International Mentor. Top Students are from USA, Canda, U.K, Egypt etc.',
-            authorName: 'Mohd Saif',
-            joiningDate: 'August 2014',
-            authorImage: '/images/author_image.jpg',
-        },
-        {
-            id: 3,
-            title: 'Forex Trading',
-            image: '/images/course_image.webp',
-            description: '6+ year trading experience International Mentor. Top Students are from USA, Canda, U.K, Egypt etc. 6+ year trading experience International Mentor. Top Students are from USA, Canda, U.K, Egypt etc.',
-            authorName: 'Mohd Saif',
-            joiningDate: 'August 2014',
-            authorImage: '/images/author_image.jpg',
-        },
-    ];
+    const courses: any = await getCourses();
 
     return (
         <div className='max-w-7xl mx-auto p-5 mt-24'>
@@ -47,7 +20,7 @@ function FeaturedCourses({ }: Props) {
             </div>
 
             <div className='mt-12 gap-5 grid sm:grid-cols-2 lg:grid-cols-3'>
-                {coursesCard.map((course) => (
+                {courses.map((course: any) => (
                     <CoursesCard key={course.id} course={course} />
                 ))}
             </div>

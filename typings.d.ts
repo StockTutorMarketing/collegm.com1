@@ -19,3 +19,8 @@ export interface TeamMembers extends SanityBody {
     link?: "string";
     image: Image_2
 }
+
+export interface Courses extends SanityBody {
+    _type: "courses";
+    thumbnail: Image
+}

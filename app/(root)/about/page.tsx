@@ -2,7 +2,8 @@ import { urlFor } from '@/sanity'
 import getTeamMembers from '@/utils/getTeamMembers'
 import Image from 'next/image'
 import React from 'react'
-import { SocialIcon } from 'react-social-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { TeamMembers } from '@/typings'
 
 type Props = {}
@@ -78,11 +79,11 @@ async function AboutUs({ }: Props) {
                                     fill
                                 />
                             </div>
-                            <div className='text-slate-800 text-center mt-4'>
+                            <div className='text-slate-800 text-center mt-4 flex flex-col items-center'>
                                 <h3 className='text-3xl font-semibold group-hover:text-zinc-100 transition duration-200 ease-in-out'>{member?.name}</h3>
                                 <p className='uppercase text-sm mt-1 group-hover:text-zinc-100 transition duration-200 ease-in-out'>Founder</p>
 
-                                <SocialIcon network='linkedin' style={{ height: 35, width: 35 }} className='mt-1' />
+                                <FontAwesomeIcon icon={faLinkedin} className='h-7 w-7 group-hover:text-zinc-100 transition duration-200 ease-in-out' />
                             </div>
                         </div>
                     ))}

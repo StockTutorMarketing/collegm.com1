@@ -5,9 +5,16 @@ import { AcademicCapIcon, CheckBadgeIcon } from '@heroicons/react/24/outline'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import TimelineContainer from '@/components/TimelineContainer'
 
-type Props = {}
+type Props = {
+    params: {
+        slug: string;
+    }
+}
 
-function CourseDetails({ }: Props) {
+function CourseDetailsPage({ params: { slug } }: Props) {
+
+    console.log(slug)
+
     return (
         <div className='bg-gray-200 dark:bg-zinc-900'>
             <div className='max-w-7xl mx-auto p-5 flex flex-col md:flex-row-reverse justify-between'>
@@ -258,4 +265,4 @@ function CourseDetails({ }: Props) {
     )
 }
 
-export default CourseDetails
+export default CourseDetailsPage

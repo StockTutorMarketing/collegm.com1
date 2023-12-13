@@ -5,8 +5,8 @@ import { schemaTypes } from './schemas'
 
 export default defineConfig({
   basePath: '/studio',
-  name: 'default',
-  title: 'collegm-laptop',
+  name: 'colle_gm',
+  title: 'Colle-GM',
 
   projectId: 't9qlj3g6',
   dataset: 'production',
