@@ -1,7 +1,7 @@
 import Image from "next/image"
-import Link from "next/link"
 import { urlFor } from "@/sanity"
-import { CheckBadgeIcon } from "@heroicons/react/24/outline"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
 export const RichTextComponents = {
     types: {
@@ -40,7 +40,7 @@ export const RichTextComponents = {
         ),
         h4: ({ children }: any) => (
             <h4 className="text-2xl font-semibold inline-flex items-center">
-                <CheckBadgeIcon className='h-5 w-5 mr-2' />
+                <FontAwesomeIcon icon={faCheckCircle} className='h-5 w-5 mr-2' />
                 {children}
             </h4>
         ),

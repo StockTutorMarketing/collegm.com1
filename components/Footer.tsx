@@ -1,10 +1,13 @@
+import { getWebInfo } from '@/utils/getWebInfo'
 import Link from 'next/link'
 import React from 'react'
 import { SocialIcon } from 'react-social-icons'
 
 type Props = {}
 
-function Footer({ }: Props) {
+async function Footer({ }: Props) {
+    const webInfo = await getWebInfo();
+
     return (
         <footer className='p-5 dark:bg-zinc-800 border-t dark:border-zinc-700'>
             <div className='flex flex-col items-center justify-center max-w-7xl mx-auto'>
@@ -41,10 +44,30 @@ function Footer({ }: Props) {
                     </Link>
                 </div>
                 <div className='mt-5'>
-                    <SocialIcon url='https://twitter.com/ColleGm_' bgColor='transparent' fgColor='grey' />
-                    <SocialIcon url='https://www.linkedin.com/company/collegm/' bgColor='transparent' fgColor='grey' />
-                    <SocialIcon url='https://www.facebook.com/people/ColleGm/100089120164013/' bgColor='transparent' fgColor='grey' />
-                    <SocialIcon url='https://www.instagram.com/collegm_official/?next=%2Fcollegm_bx%2F' bgColor='transparent' fgColor='grey' />
+                    <SocialIcon
+                        url={webInfo.twitter}
+                        bgColor='transparent'
+                        fgColor='grey'
+                        target='_blank'
+                    />
+                    <SocialIcon
+                        url={webInfo.linkedIn}
+                        bgColor='transparent'
+                        fgColor='grey'
+                        target='_blank'
+                    />
+                    <SocialIcon
+                        url={webInfo.facebook}
+                        bgColor='transparent'
+                        fgColor='grey'
+                        target='_blank'
+                    />
+                    <SocialIcon
+                        url={webInfo.instagram}
+                        bgColor='transparent'
+                        fgColor='grey'
+                        target='_blank'
+                    />
                 </div>
 
                 <p className='text-slate-500 dark:text-zinc-300 mt-5'>© {new Date().getFullYear()} Collegm, Inc. All rights reserved.</p>

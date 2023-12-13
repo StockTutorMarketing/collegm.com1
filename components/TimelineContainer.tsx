@@ -13,7 +13,6 @@ type Props = {
 }
 
 function TimelineContainer({ values }: Props) {
-    console.log(values.slice(0, values.length - 1));
     return (
         <div>
             <Timeline

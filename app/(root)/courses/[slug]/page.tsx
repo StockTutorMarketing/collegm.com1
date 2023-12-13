@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import { StarIcon } from '@heroicons/react/24/solid'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import TimelineContainer from '@/components/TimelineContainer'
 import { groq } from 'next-sanity'
@@ -71,8 +70,9 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                             <p className=''>
                                 Duration:
                                 {" "}
-                                <span className='font-medium'>
+                                <span className='font-medium uppercase'>
                                     {course?.duration}
+                                    Days
                                 </span>
                             </p>
                         </div>

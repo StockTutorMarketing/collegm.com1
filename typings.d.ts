@@ -52,7 +52,7 @@ export interface Courses extends SanityBody {
     _type: "courses";
     description: 'string';
     title: string;
-    thumbnail: Image;
+    thumbnail: Image_2;
     teachers: Teachers;
     isFeaturedCourse: boolean;
     slug: Slug;

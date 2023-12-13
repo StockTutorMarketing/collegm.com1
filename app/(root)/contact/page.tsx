@@ -1,5 +1,6 @@
 import React from 'react'
-import { MapPinIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {}
 
@@ -15,17 +16,17 @@ function ContactUs({ }: Props) {
 
                     <div className='mt-10 text-zinc-700 dark:text-zinc-100 space-y-6'>
                         <p className='flex items-start'>
-                            <MapPinIcon className='h-7 w-7 mr-3 text-zinc-800 dark:text-zinc-100 flex-shrink-0' />
+                            <FontAwesomeIcon icon={faLocationDot} className='h-7 w-7 mr-3 text-zinc-800 dark:text-zinc-100 flex-shrink-0' />
                             FA- 12, 1st Floor Crown Plaza Mall, Sector 15A, Main Mathura Road, Faridabad, Haryana - 121007.
                         </p>
 
                         <p className='flex items-center'>
-                            <PhoneIcon className='h-7 w-7 mr-3 text-zinc-800 dark:text-zinc-100 flex-shrink-0' />
+                            <FontAwesomeIcon icon={faPhone} className='h-7 w-7 mr-3 text-zinc-800 dark:text-zinc-100 flex-shrink-0' />
                             +91 8448770864
                         </p>
 
                         <p className='flex items-start'>
-                            <EnvelopeIcon className='h-7 w-7 mr-3 text-zinc-800 dark:text-zinc-100 flex-shrink-0' />
+                            <FontAwesomeIcon icon={faEnvelope} className='h-7 w-7 mr-3 text-zinc-800 dark:text-zinc-100 flex-shrink-0' />
                             help@collegm.com
                         </p>
                     </div>

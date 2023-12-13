@@ -73,7 +73,7 @@ export default defineType({
             name: 'duration',
             title: 'Duration',
             type: 'string',
-            description: 'Duration of the course'
+            description: 'Duration of the course (in days)'
         }),
         defineField({
             name: 'overview',

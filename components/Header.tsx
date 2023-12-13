@@ -76,26 +76,26 @@ function Header({ }: Props) {
                         <ul className='flex space-x-3 lg:space-x-7 text-lg dark:text-zinc-100'>
                             <Link
                                 href={'/'}
-                                className={`transition duration-200 ${pathname === '/' ? 'opacity-100 font-semibold' : 'opacity-70'}`}
+                                className={`transition duration-200 ${pathname === '/' ? 'opacity-100 font-medium' : 'opacity-70'}`}
 
                             >
                                 Home
                             </Link>
                             <Link
                                 href={'/courses'}
-                                className={`transition duration-200 ${pathname === '/courses' ? 'opacity-100 font-semibold' : 'opacity-70'}`}
+                                className={`transition duration-200 ${pathname === '/courses' ? 'opacity-100 font-medium' : 'opacity-70'}`}
                             >
                                 Courses
                             </Link>
                             <Link
                                 href={'/about'}
-                                className={`transition duration-200 ${pathname === '/about' ? 'opacity-100 font-semibold' : 'opacity-70'}`}
+                                className={`transition duration-200 ${pathname === '/about' ? 'opacity-100 font-medium' : 'opacity-70'}`}
                             >
                                 About Us
                             </Link>
                             <Link
                                 href={'/contact'}
-                                className={`transition duration-200 ${pathname === '/contact' ? 'opacity-100 font-semibold' : 'opacity-70'}`}
+                                className={`transition duration-200 ${pathname === '/contact' ? 'opacity-100 font-medium' : 'opacity-70'}`}
                             >
                                 Contact Us
                             </Link>
