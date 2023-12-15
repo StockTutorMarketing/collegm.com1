@@ -45,18 +45,21 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                             <h4 className='text-lg font-semibold'>{course?.title}</h4>
 
                             <p className='flex items-center'>
-                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStar} className='text-yellow-500 h-6 w-6 mr-1' />
                                 {course?.rating}
                             </p>
                         </div>
 
                         <p className='mt-4 text-2xl font-medium'>
-                            ₹{course?.discountedPrice}
+                            ₹{course?.discountedPrice.toLocaleString()}
                             {" "}
-                            <span className='text-xl'>
-                                {" "}
-                                ₹<s>{course?.actualPrice}</s>
-                            </span>
+
+                            {course?.actualPrice === null &&
+                                <span className='text-xl'>
+                                    {" "}
+                                    ₹<s>{course?.actualPrice}</s>
+                                </span>
+                            }
                         </p>
 
                         <div className='mt-5 text-lg'>
@@ -72,6 +75,7 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                                 {" "}
                                 <span className='font-medium uppercase'>
                                     {course?.duration}
+                                    {" "}
                                     Days
                                 </span>
                             </p>
@@ -101,12 +105,14 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                         </p>
 
                         <p className='mt-2 text-2xl font-medium'>
-                            ₹{course?.discountedPrice}
+                            ₹{course?.discountedPrice.toLocaleString()}
                             {" "}
-                            <span className='text-xl'>
-                                {" "}
-                                ₹<s>{course?.actualPrice}</s>
-                            </span>
+                            {course?.actualPrice === null &&
+                                <span className='text-xl'>
+                                    {" "}
+                                    ₹<s>{course?.actualPrice}</s>
+                                </span>
+                            }
                         </p>
 
                         <div className='mt-5 text-lg'>
@@ -122,6 +128,8 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                                 {" "}
                                 <span className='font-medium'>
                                     {course?.duration}
+                                    {" "}
+                                    Days
                                 </span>
                             </p>
                         </div>

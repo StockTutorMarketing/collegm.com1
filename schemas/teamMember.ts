@@ -12,6 +12,12 @@ export default defineType({
             description: 'Name of the team member'
         }),
         defineField({
+            name: 'priority',
+            title: 'Priority ',
+            type: 'number',
+            // description: 'Enter in sequence'
+        }),
+        defineField({
             name: 'image',
             title: 'Profile Image',
             type: 'image',

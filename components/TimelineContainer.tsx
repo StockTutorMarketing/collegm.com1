@@ -29,7 +29,11 @@ function TimelineContainer({ values }: Props) {
                             <TimelineDot sx={{ backgroundColor: '#27272a' }} />
                             <TimelineConnector sx={{ backgroundColor: '#27272a' }} />
                         </TimelineSeparator>
-                        <TimelineContent sx={{ fontSize: '14px' }}>{value}</TimelineContent>
+                        <TimelineContent sx={{ fontSize: '14px' }}>
+                            <p>
+                                {value}
+                            </p>
+                        </TimelineContent>
                     </TimelineItem>
                 ))}
 

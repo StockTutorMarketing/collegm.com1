@@ -23,7 +23,7 @@ function CoursesCard({ course }: Props) { // any for now
             </div>
             <div className='p-5'>
                 <div className='dark:text-zinc-100'>
-                    <h2 className='text-2xl font-semibold truncate'>{course.title}</h2>
+                    <h2 className='text-2xl font-semibold lg:truncate'>{course.title}</h2>
                     <p className='text-xs line-clamp-2'>{course.description}</p>
                 </div>
                 <div className='mt-5'>

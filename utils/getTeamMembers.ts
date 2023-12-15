@@ -2,7 +2,7 @@ import { groq } from 'next-sanity'
 import { sanityClient } from '../sanity';
 
 const query = groq`
-    *[_type == 'teamMembers'] {
+    *[_type == 'teamMembers'] | order(priority asc) {
         ...,
     }
 `;

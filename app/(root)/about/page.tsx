@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { TeamMembers } from '@/typings'
 import getTeamMembers from '@/utils/getTeamMembers'
+import ClientSideRoute from '@/components/ClientSideRoute'
 
 type Props = {}
 
@@ -68,25 +69,30 @@ async function AboutUs({ }: Props) {
 
                 <div className='grid items-center justify-center sm:grid-cols-2 lg:grid-cols-4 my-12 lg:my-22 gap-5'>
                     {teamMembers.map((member) => (
-                        <div
+                        <ClientSideRoute
                             key={member._id}
-                            className='flex flex-col items-center border border-gray-100 rounded-lg py-4 group hover:bg-blue-600 transition duration-200 ease-in-out cursor-pointer max-w-sm'
+                            route={member?.link || ''}
                         >
-                            <div className='relative h-44 w-44 rounded-full'>
-                                <Image
-                                    className='absolute max-w-full h-auto object-contain rounded-full'
-                                    src={urlFor(member?.image).url()}
-                                    alt=''
-                                    fill
-                                />
-                            </div>
-                            <div className='text-slate-800 text-center mt-4 flex flex-col items-center'>
-                                <h3 className='text-3xl font-semibold group-hover:text-zinc-100 transition duration-200 ease-in-out'>{member?.name}</h3>
-                                <p className='uppercase text-sm mt-1 group-hover:text-zinc-100 transition duration-200 ease-in-out'>Founder</p>
+                            <div
+                                className='flex flex-col items-center border border-gray-100 rounded-lg py-4 group hover:bg-blue-600 transition duration-200 ease-in-out cursor-pointer max-w-sm'
+                            >
+                                <div className='relative h-44 w-44 rounded-full'>
+                                    <Image
+                                        className='absolute max-w-full h-auto object-contain rounded-full'
+                                        src={urlFor(member?.image).url()}
+                                        alt=''
+                                        fill
+                                    />
+                                </div>
+                                <div className='text-slate-800 text-center mt-4 flex flex-col items-center'>
+                                    <h3 className='text-3xl font-semibold group-hover:text-zinc-100 transition duration-200 ease-in-out'>{member?.name}</h3>
+                                    <p className='uppercase text-sm mt-1 group-hover:text-zinc-100 transition duration-200 ease-in-out'>{member?.role}</p>
 
-                                <FontAwesomeIcon icon={faLinkedin} className='h-7 w-7 group-hover:text-zinc-100 transition duration-200 ease-in-out' />
+                                    <FontAwesomeIcon icon={faLinkedin} className='h-7 w-7 mt-1 group-hover:text-zinc-100 transition duration-200 ease-in-out' />
+                                </div>
                             </div>
-                        </div>
+                        </ClientSideRoute>
+
                     ))}
                 </div>
             </div>
