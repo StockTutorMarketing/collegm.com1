@@ -3,6 +3,7 @@ import CommunityNumbers from '@/components/CommunityNumbers';
 import ExcellentTeachers from '@/components/ExcellentTeachers';
 import FeaturedCourses from '@/components/FeaturedCourses';
 import Testimonials from '@/components/Testimonials';
+import Link from 'next/link';
 import Marquee from "react-fast-marquee";
 
 export const revalidate = 0 // revalidate at most every hour
@@ -11,8 +12,19 @@ export default function Home() {
   return (
     <main className="bg-gray-200 dark:bg-zinc-900">
 
-      <Marquee className='bg-yellow-400 p-5'>
-        Get All stock market courses @discounted price 🔥 Avail Live Class Benifits 🔥
+      <Marquee
+        className='bg-yellow-400 p-5'
+        pauseOnHover
+      >
+        Get All stock market courses @discounted price. Download our app from Play Store Now and 🔥 Avail Live Class Benifits 🔥
+        <Link
+          href={'https://clpgriffin.page.link/SpHw'}
+          className='underline'
+          target='_blank'
+        >
+          Click Here
+        </Link>
+        &nbsp;to download
       </Marquee>
 
       <Banner />
@@ -20,7 +32,7 @@ export default function Home() {
       <FeaturedCourses />
 
       <CommunityNumbers />
-      
+
       <Testimonials />
 
       <ExcellentTeachers />

@@ -9,6 +9,8 @@ import { RichTextComponents } from '@/components/RichTextComponents'
 import { Courses } from '@/typings'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { SocialIcon } from 'react-social-icons'
+import { getWebInfo } from '@/utils/getWebInfo'
 
 type Props = {
     params: {
@@ -26,6 +28,7 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
     }
 `;
     const course: Courses = await sanityClient.fetch(query, { slug })
+    const webInfo = await getWebInfo();
 
     return (
         <div className='bg-gray-200 dark:bg-zinc-900'>
@@ -44,10 +47,12 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                         <div className='flex items-center justify-between'>
                             <h4 className='text-lg font-semibold'>{course?.title}</h4>
 
-                            <p className='flex items-center'>
-                                <FontAwesomeIcon icon={faStar} className='text-yellow-500 h-6 w-6 mr-1' />
-                                {course?.rating}
-                            </p>
+                            {course?.rating === null &&
+                                <p className='flex items-center'>
+                                    <FontAwesomeIcon icon={faStar} className='text-yellow-500 h-6 w-6 mr-1' />
+                                    {course?.rating}
+                                </p>
+                            }
                         </div>
 
                         <p className='mt-4 text-2xl font-medium'>
@@ -75,7 +80,7 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                             <p className=''>
                                 Duration:
                                 {" "}
-                                <span className='font-medium uppercase'>
+                                <span className='font-medium'>
                                     {course?.duration}
                                     {" "}
                                     Days
@@ -97,14 +102,12 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
 
                         <p className='mt-2 text-sm '>{course?.description}</p>
 
-                        <p className='flex items-center mt-4'>
-                            <FontAwesomeIcon icon={faStar} className='text-yellow-500 h-6 w-6 mr-1' />
-                            <FontAwesomeIcon icon={faStar} className='text-yellow-500 h-6 w-6 mr-1' />
-                            <FontAwesomeIcon icon={faStar} className='text-yellow-500 h-6 w-6 mr-1' />
-                            <FontAwesomeIcon icon={faStar} className='text-yellow-500 h-6 w-6 mr-1' />
-                            <FontAwesomeIcon icon={faStar} className='h-6 w-6 mr-1' />
-                            {course?.rating}
-                        </p>
+                        {course?.rating === null &&
+                            <p className='flex items-center mt-4'>
+                                <FontAwesomeIcon icon={faStar} className='text-yellow-500 h-6 w-6 mr-1' />
+                                {course?.rating}
+                            </p>
+                        }
 
                         <p className='mt-2 text-2xl font-medium'>
                             ₹{course?.discountedPrice.toLocaleString()}
@@ -208,7 +211,12 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
 
                                     <div className='space-y-3'>
                                         <h3 className='text-2xl font-semibold'>Message us on Whatsapp</h3>
-                                        <button className='py-3 w-full bg-green-500 rounded-lg text-white font-medium'>
+                                        <button className='py-1.5 w-full bg-green-500 rounded-lg text-white font-medium'>
+                                            <SocialIcon
+                                                style={{ height: 40, width: 40, marginRight: 15 }}
+                                                url={`https://wa.me/${webInfo.whatsappNumber}?text=I'm%20interested%20in%20your%20car%20for%20sale`}
+                                                network='whatsapp'
+                                            />
                                             Chat on Whatsapp
                                         </button>
                                     </div>

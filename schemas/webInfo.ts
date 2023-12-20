@@ -24,6 +24,11 @@ export default defineType({
             type: 'number',
         }),
         defineField({
+            name: 'whatsappNumber',
+            title: 'Whatsapp Number',
+            type: 'number',
+        }),
+        defineField({
             name: 'email',
             title: 'Email Address',
             type: 'string',
@@ -35,12 +40,12 @@ export default defineType({
         }),
         defineField({
             name: 'privacyPolicy',
-            title: 'Terms & Conditions',
+            title: 'Privacy Policy',
             type: 'url',
         }),
         defineField({
             name: 'refundAndCancellation',
-            title: 'Terms & Conditions',
+            title: 'Refund & Cancellation',
             type: 'url',
         }),
         defineField({
