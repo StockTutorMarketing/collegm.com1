@@ -63,13 +63,15 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                         </p>
 
                         <div className='mt-5 text-lg'>
-                            <p className=''>
-                                Starts on:
-                                {" "}
-                                <span className='font-medium'>
-                                    {course?.startingDate}
-                                </span>
-                            </p>
+                            {course?.startingDate === null &&
+                                <p className=''>
+                                    Starts on:
+                                    {" "}
+                                    <span className='font-medium'>
+                                        {course?.startingDate}
+                                    </span>
+                                </p>
+                            }
                             <p className=''>
                                 Duration:
                                 {" "}
@@ -116,13 +118,15 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                         </p>
 
                         <div className='mt-5 text-lg'>
-                            <p className=''>
-                                Starts on:
-                                {" "}
-                                <span className='font-medium'>
-                                    {course?.startingDate}
-                                </span>
-                            </p>
+                            {course?.startingDate === null &&
+                                <p className=''>
+                                    Starts on:
+                                    {" "}
+                                    <span className='font-medium'>
+                                        {course?.startingDate}
+                                    </span>
+                                </p>
+                            }
                             <p className=''>
                                 Duration:
                                 {" "}
