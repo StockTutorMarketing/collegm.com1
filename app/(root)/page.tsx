@@ -6,7 +6,7 @@ import Testimonials from '@/components/Testimonials';
 import Link from 'next/link';
 import Marquee from "react-fast-marquee";
 
-export const revalidate = 0 // revalidate at most every hour
+export const revalidate = 3600 // revalidate at most every hour
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
         className='bg-yellow-400 p-5'
         pauseOnHover
       >
-        Get All stock market courses @discounted price. Download our app from Play Store Now and 🔥 Avail Live Class Benifits 🔥
+        Get All stock market courses @discounted price. Download our app from Play Store Now and 🔥 Avail Live Class Benefits 🔥
         <Link
           href={'https://clpgriffin.page.link/SpHw'}
           className='underline'

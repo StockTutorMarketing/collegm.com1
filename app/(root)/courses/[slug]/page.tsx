@@ -18,7 +18,7 @@ type Props = {
     }
 }
 
-export const revalidate = 0 // revalidate at most every hour
+export const revalidate = 3600 // revalidate at most every hour
 
 async function CourseDetailsPage({ params: { slug } }: Props) {
     const query = groq`

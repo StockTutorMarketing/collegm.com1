@@ -33,12 +33,12 @@ async function Footer({ }: Props) {
                         Terms & Conditions
                     </Link>
                     <Link
-                        href={'/privacy-policy'}
+                        href={'/privacy'}
                     >
                         Privacy Policy
                     </Link>
                     <Link
-                        href={'/refund-cancellation-policy'}
+                        href={'/refund'}
                     >
                         Refund And Cancellation Policy
                     </Link>

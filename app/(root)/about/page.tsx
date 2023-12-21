@@ -9,7 +9,7 @@ import ClientSideRoute from '@/components/ClientSideRoute'
 
 type Props = {}
 
-export const revalidate = 0 // revalidate at most every hour
+export const revalidate = 3600 // revalidate at most every hour
 
 async function AboutUs({ }: Props) {
     const teamMembers: TeamMembers[] = await getTeamMembers();

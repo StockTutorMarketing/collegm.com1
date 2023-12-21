@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { transporter } from '@/lib/transporter'
+import Submit from '@/components/ui/Submit'
 
 type Props = {}
 
@@ -17,6 +18,8 @@ function ContactUs({ }: Props) {
         const userEmail = e.get("email")?.toString();
         const userNumber = e.get("number")?.toString();
         const userMessage = e.get("message")?.toString();
+
+        if (!userEmail || !userName) return
 
         await transporter.sendMail({
             from: `Colle-Gm Help ${user}`,
@@ -70,6 +73,9 @@ function ContactUs({ }: Props) {
                             name='name'
                             type="text"
                             placeholder='Jhon Doe'
+                            required
+                            pattern='^[A-Za-z]+\s[A-Za-z]+$'
+                            title="Name should not contain numbers"
                         />
                     </div>
                     <div className='mt-5 space-y-2'>
@@ -79,15 +85,19 @@ function ContactUs({ }: Props) {
                             name='email'
                             type="text"
                             placeholder='jhon@example.com'
+                            required
+                            pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}'
+                            title="Please enter a correct email ID"
                         />
                     </div>
                     <div className='mt-5 space-y-2'>
                         <p className='text-zinc-700 dark:text-zinc-100'>Contact</p>
                         <input
                             className='contactInput'
-                            name='number'
+                            name='tel'
                             type="text"
                             placeholder='9991122255'
+                            title="Please verify the number once again"
                         />
                     </div>
                     <div className='mt-5 space-y-2'>
@@ -96,15 +106,11 @@ function ContactUs({ }: Props) {
                             className='contactInput'
                             name='message'
                             placeholder='Message'
+                            required
                         />
                     </div>
 
-                    <button
-                        type='submit'
-                        className='text-white bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-800 font-semibold py-3 px-4 rounded-lg w-full mt-6'
-                    >
-                        Get In Touch
-                    </button>
+                    <Submit />
                 </form>
             </div>
         </main>
