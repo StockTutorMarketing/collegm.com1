@@ -6,6 +6,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { TeamMembers } from '@/typings'
 import getTeamMembers from '@/utils/getTeamMembers'
 import ClientSideRoute from '@/components/ClientSideRoute'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -51,7 +52,7 @@ async function AboutUs({ }: Props) {
                     <div className='space-y-5 mt-12 lg:mt-0 xl:flex-[0.9_1_0%] dark:text-zinc-100'>
                         <h1 className='text-3xl md:text-4xl font-bold md:text-center'>Why Choose Us</h1>
                         <h2 className='text-2xl md:text-3xl font-semibold md:text-center'>Collegm is the best place to learn new skills.</h2>
-                        <div>
+                        <div className='!mb-7'>
                             <p>Get access to live classes and communities with experts, and find amazing courses. Our network of expert instructors are passionate about sharing their knowledge and inspiring others.</p>
                             <br />
                             <p>You can learn from the best in the field with ColleGm and take your skills to the next level. Collegm is more than just an online learning platform - its an active and vibrant community of like-minded individuals who share a passion for learning. Join our online forums, groups, and events to connect with other learners and exchange ideas.</p>
@@ -61,7 +62,12 @@ async function AboutUs({ }: Props) {
                             <p>Collegm is your one-stop destination to learn from experts in any field and build a successful career. We offer online skill based courses that provide detailed knowledge about different topics such as Options Trading, Swing Trading, Algo Trading, Project Management etc., so that you can become an Expert in no time!</p>
                         </div>
 
-                        <button className='button bg-white'>Contact Us</button>
+                        <Link
+                            href={'/contact'}
+                            className='button bg-white'
+                        >
+                            Contact Us
+                        </Link>
                     </div>
                 </div>
 
