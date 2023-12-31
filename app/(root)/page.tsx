@@ -13,7 +13,7 @@ export default function Home() {
     <main className="bg-gray-200 dark:bg-zinc-900">
 
       <Marquee
-        className='bg-yellow-400 p-5'
+        className='bg-yellow-400 p-5 !sticky top-[6.5rem] z-40'
         pauseOnHover
       >
         Get All stock market courses @discounted price. Download our app from Play Store Now and 🔥 Avail Live Class Benefits 🔥

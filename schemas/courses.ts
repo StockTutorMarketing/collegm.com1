@@ -16,10 +16,10 @@ export default defineType({
             title: 'Slug',
             type: 'slug',
             options: {
-              source: 'title',
-              maxLength: 96,
+                source: 'title',
+                maxLength: 96,
             },
-          }),
+        }),
         defineField({
             name: 'thumbnail',
             title: 'Course Thumbnail',
@@ -62,6 +62,12 @@ export default defineType({
             title: 'Actual Price',
             type: 'number',
             description: 'Stike through price'
+        }),
+        defineField({
+            name: 'offPercent',
+            title: 'Off By Percent',
+            type: 'number',
+            description: 'Only enter the percentage number not (%)'
         }),
         defineField({
             name: 'startingDate',

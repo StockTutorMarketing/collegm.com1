@@ -104,7 +104,7 @@ function Header({ }: Props) {
 
                     <Link
                         href={'/courses'}
-                        className='text-xs lg:text-sm button dark:text-zinc-100'
+                        className='text-xs lg:text-sm button dark:text-zinc-100 dark:border-zinc-400'
                     >
                         Become A Mentor -&gt;
                     </Link>

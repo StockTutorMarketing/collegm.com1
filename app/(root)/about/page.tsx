@@ -7,6 +7,7 @@ import { TeamMembers } from '@/typings'
 import getTeamMembers from '@/utils/getTeamMembers'
 import ClientSideRoute from '@/components/ClientSideRoute'
 import Link from 'next/link'
+import { getWebInfo } from '@/utils/getWebInfo'
 
 type Props = {}
 
@@ -14,6 +15,7 @@ export const revalidate = 3600 // revalidate at most every hour
 
 async function AboutUs({ }: Props) {
     const teamMembers: TeamMembers[] = await getTeamMembers();
+    const webInfo = await getWebInfo();
 
     return (
         <main className='bg-gray-200 dark:bg-zinc-900 p-5'>
@@ -63,8 +65,9 @@ async function AboutUs({ }: Props) {
                         </div>
 
                         <Link
-                            href={'/contact'}
-                            className='button bg-white'
+                            href={`https://wa.me/${webInfo?.whatsappNumber}?text=Hi,%20I%20wanted%20to%20know%20more%20about%20CollegGm!`}
+                            target='_blank'
+                            className='button bg-white dark:bg-zinc-800 dark:border-zinc-400'
                         >
                             Contact Us
                         </Link>
@@ -91,10 +94,10 @@ async function AboutUs({ }: Props) {
                                     />
                                 </div>
                                 <div className='text-slate-800 text-center mt-4 flex flex-col items-center'>
-                                    <h3 className='text-3xl font-semibold group-hover:text-zinc-100 transition duration-200 ease-in-out'>{member?.name}</h3>
-                                    <p className='uppercase text-sm mt-1 group-hover:text-zinc-100 transition duration-200 ease-in-out'>{member?.role}</p>
+                                    <h3 className='text-3xl font-semibold dark:text-zinc-100 group-hover:text-zinc-100 transition duration-200 ease-in-out'>{member?.name}</h3>
+                                    <p className='uppercase text-sm mt-1 dark:text-zinc-100 group-hover:text-zinc-100 transition duration-200 ease-in-out'>{member?.role}</p>
 
-                                    <FontAwesomeIcon icon={faLinkedin} className='h-7 w-7 mt-1 group-hover:text-zinc-100 transition duration-200 ease-in-out' />
+                                    <FontAwesomeIcon icon={faLinkedin} className='h-7 w-7 mt-1 dark:text-zinc-100 group-hover:text-zinc-100 transition duration-200 ease-in-out' />
                                 </div>
                             </div>
                         </ClientSideRoute>

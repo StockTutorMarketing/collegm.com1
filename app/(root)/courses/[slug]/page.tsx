@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { SocialIcon } from 'react-social-icons'
 import { getWebInfo } from '@/utils/getWebInfo'
+import Link from 'next/link'
 
 type Props = {
     params: {
@@ -18,7 +19,7 @@ type Props = {
     }
 }
 
-export const revalidate = 3600 // revalidate at most every hour
+export const revalidate = 0 // revalidate at most every hour
 
 async function CourseDetailsPage({ params: { slug } }: Props) {
     const query = groq`
@@ -47,12 +48,10 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                         <div className='flex items-center justify-between'>
                             <h4 className='text-lg font-semibold'>{course?.title}</h4>
 
-                            {course?.rating === null &&
-                                <p className='flex items-center'>
-                                    <FontAwesomeIcon icon={faStar} className='text-yellow-500 h-6 w-6 mr-1' />
-                                    {course?.rating}
-                                </p>
-                            }
+                            <p className='flex items-center'>
+                                <FontAwesomeIcon icon={faStar} className='text-yellow-500 h-6 w-6 mr-1' />
+                                {course?.rating}
+                            </p>
                         </div>
 
                         <p className='mt-4 text-2xl font-medium'>
@@ -102,12 +101,10 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
 
                         <p className='mt-2 text-sm '>{course?.description}</p>
 
-                        {course?.rating === null &&
-                            <p className='flex items-center mt-4'>
-                                <FontAwesomeIcon icon={faStar} className='text-yellow-500 h-6 w-6 mr-1' />
-                                {course?.rating}
-                            </p>
-                        }
+                        <p className='flex items-center mt-4'>
+                            <FontAwesomeIcon icon={faStar} className='text-yellow-500 h-6 w-6 mr-1' />
+                            {course?.rating}
+                        </p>
 
                         <p className='mt-2 text-2xl font-medium'>
                             ₹{course?.discountedPrice.toLocaleString()}
@@ -210,15 +207,18 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                                     </div>
 
                                     <div className='space-y-3'>
-                                        <h3 className='text-2xl font-semibold'>Message us on Whatsapp</h3>
-                                        <button className='py-1.5 w-full bg-green-500 rounded-lg text-white font-medium'>
+                                        <h3 className='text-2xl font-semibold mb-5'>Message us on Whatsapp</h3>
+                                        <Link
+                                            href={`https://wa.me/${webInfo.whatsappNumber}?text=I'm%20interested%20in%20${course?.title}%20course%20and%20want%20to%20know%20more%20it`}
+                                            className='py-1 flex-1 w-full bg-green-500 rounded-lg text-white font-medium flex items-center justify-center'
+                                        >
                                             <SocialIcon
                                                 style={{ height: 40, width: 40, marginRight: 15 }}
-                                                url={`https://wa.me/${webInfo.whatsappNumber}?text=I'm%20interested%20in%20your%20car%20for%20sale`}
                                                 network='whatsapp'
+                                                bgColor='transparent'
                                             />
                                             Chat on Whatsapp
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </TabsContent>
