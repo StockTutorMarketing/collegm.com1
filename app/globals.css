@@ -78,7 +78,7 @@
 
 @layer components {
   .button {
-    @apply px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 transition transform ease-out duration-100 dark:hover:shadow-[0_10px_15px_-3px_rgb(255,255,255,0.1)]
+    @apply px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 dark:active:bg-zinc-700 transition transform ease-out duration-100 dark:hover:shadow-[0_10px_15px_-3px_rgb(255,255,255,0.1)]
   }
 
   .contactInput {

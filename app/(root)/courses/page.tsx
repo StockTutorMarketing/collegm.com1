@@ -6,7 +6,7 @@ import React from 'react'
 
 type Props = {}
 
-export const revalidate = 0 // revalidate at most every hour
+export const revalidate = process.env.NODE_ENV === 'production' ? 3600 : 0 // revalidate at most every hour if running on production
 
 export default async function Courses({ }: Props) {
   const courses: Courses[] = await getCourses();

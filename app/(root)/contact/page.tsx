@@ -4,12 +4,13 @@ import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-
 import { transporter } from '@/lib/transporter'
 import Submit from '@/components/ui/Submit'
 
-type Props = {}
+type Props = {
+    searchParams?: { [key: string]: string | string[] | undefined };
+}
 
 const user = process.env.GOOGLE_USER_EMAIL
-const pass = process.env.GOOGLE_USER_PASS
 
-function ContactUs({ }: Props) {
+function ContactUs({ searchParams }: Props) {
 
     const sendMailToSupport = async (e: FormData) => {
         'use server'
@@ -18,9 +19,26 @@ function ContactUs({ }: Props) {
         const userEmail = e.get("email")?.toString();
         const userNumber = e.get("number")?.toString();
         const userMessage = e.get("message")?.toString();
+        const mentorSubject = e.get("teachingField")?.toString();
+        const mentorSocialLink = e.get("socialLink")?.toString();
 
-        if (!userEmail || !userName) return
+        if (!userEmail || !userName || !userMessage) return
 
+        if (searchParams?.name === "query_mentor") {
+            await transporter.sendMail({
+                from: `Colle-Gm Help ${user}`,
+                to: `Colle-Gm Help ${user}`,
+                subject: `Enquiry to become a mentor`,
+                html: `
+                    <p>Name: ${userName}</p>
+                    <p>Number: ${userNumber}</p>
+                    <p>Email: ${userEmail}</p>
+                    <p>Subject I Want to teach: ${mentorSubject}</p>
+                    <p>Social Link: ${mentorSocialLink}</p>
+                    <p>Message: ${userMessage}</p>
+                `
+            });
+        }
         await transporter.sendMail({
             from: `Colle-Gm Help ${user}`,
             to: `Colle-Gm Help ${user}`,
@@ -95,11 +113,33 @@ function ContactUs({ }: Props) {
                         <input
                             className='contactInput'
                             name='tel'
-                            type="text"
+                            type="tel"
                             placeholder='9991122255'
                             title="Please verify the number once again"
                         />
                     </div>
+                    {searchParams?.name === 'query_mentor' &&
+                        <>
+                            <div className='mt-5 space-y-2'>
+                                <p className='text-zinc-700 dark:text-zinc-100'>Subject you would like to teach</p>
+                                <input
+                                    className='contactInput'
+                                    name='teachingField'
+                                    type="text"
+                                    placeholder='Topic'
+                                />
+                            </div>
+                            <div className='mt-5 space-y-2'>
+                                <p className='text-zinc-700 dark:text-zinc-100'>Social Links</p>
+                                <input
+                                    className='contactInput'
+                                    name='socialLink'
+                                    type="url"
+                                    placeholder='linkedin.com/JhonDoe'
+                                />
+                            </div>
+                        </>
+                    }
                     <div className='mt-5 space-y-2'>
                         <p className='text-zinc-700 dark:text-zinc-100'>Message</p>
                         <textarea

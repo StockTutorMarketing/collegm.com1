@@ -11,7 +11,7 @@ import { getWebInfo } from '@/utils/getWebInfo'
 
 type Props = {}
 
-export const revalidate = 3600 // revalidate at most every hour
+export const revalidate = process.env.NODE_ENV === 'production' ? 3600 : 0 // revalidate at most every hour if running on production
 
 async function AboutUs({ }: Props) {
     const teamMembers: TeamMembers[] = await getTeamMembers();

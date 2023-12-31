@@ -26,7 +26,7 @@ function CoursesCard({ course }: Props) {
             <div className='p-5'>
                 <div className='dark:text-zinc-100'>
                     <h2 className='text-2xl font-semibold lg:truncate'>{course.title}</h2>
-                    <p className='text-xs line-clamp-2'>{course.description}</p>
+                    {/* <p className='text-xs line-clamp-2'>{course.description}</p> */}
                 </div>
                 <div className='mt-5'>
                     <div className='flex space-x-4 items-center'>
@@ -50,8 +50,11 @@ function CoursesCard({ course }: Props) {
                                     <p className='font-semibold'>{course?.rating}</p>
                                 </div>
                                 <div className='flex items-center space-x-2'>
-                                    <p className='text-sm'>₹ <s>{course?.actualPrice}</s>
-                                    </p>
+                                    {course?.actualPrice === null &&
+                                        <span className='text-xl'>
+                                            ₹<s>{course?.actualPrice}</s>
+                                        </span>
+                                    }
                                     <p className='font-semibold'>₹ {course?.discountedPrice}</p>
                                     <p className='text-red-500'>(50% OFF)</p>
                                 </div>

@@ -70,6 +70,11 @@ export default defineType({
             description: 'Only enter the percentage number not (%)'
         }),
         defineField({
+            name: 'razorPayLink',
+            title: 'Razor Payment Link',
+            type: 'url',
+        }),
+        defineField({
             name: 'startingDate',
             title: 'Starting Date',
             type: 'string',

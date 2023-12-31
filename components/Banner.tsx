@@ -77,7 +77,7 @@ function Banner({ }: Props) {
                     </div>
                 </div>
                 <Link
-                    className='button bg-white shadow-sm border w-fit'
+                    className='button bg-white dark:bg-zinc-800 shadow-sm border dark:border-zinc-400 w-fit'
                     href={'/courses'}
                 >
                     Explore Courses -&gt;

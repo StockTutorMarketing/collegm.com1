@@ -83,7 +83,7 @@ function Header({ }: Props) {
                             </Link>
                             <Link
                                 href={'/courses'}
-                                className={`transition duration-200 ${pathname === '/courses' ? 'opacity-100 font-medium' : 'opacity-70'}`}
+                                className={`transition duration-200 ${pathname.includes('/courses') ? 'opacity-100 font-medium' : 'opacity-70'}`}
                             >
                                 Courses
                             </Link>
@@ -103,7 +103,10 @@ function Header({ }: Props) {
                     </nav>
 
                     <Link
-                        href={'/courses'}
+                        href={{
+                            pathname: '/contact',
+                            query: { name: 'query_mentor' }
+                        }}
                         className='text-xs lg:text-sm button dark:text-zinc-100 dark:border-zinc-400'
                     >
                         Become A Mentor -&gt;

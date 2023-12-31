@@ -19,7 +19,7 @@ type Props = {
     }
 }
 
-export const revalidate = 0 // revalidate at most every hour
+export const revalidate = process.env.NODE_ENV === 'production' ? 3600 : 0 // revalidate at most every hour if running on production
 
 async function CourseDetailsPage({ params: { slug } }: Props) {
     const query = groq`
@@ -29,6 +29,7 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
     }
 `;
     const course: Courses = await sanityClient.fetch(query, { slug })
+    console.log(course?.razorPayLink)
     const webInfo = await getWebInfo();
 
     return (
@@ -87,15 +88,28 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                             </p>
                         </div>
 
-                        <button
-                            className='py-3 w-full mt-8 bg-zinc-800 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-800 rounded-lg font-medium drop-shadow-lg active:scale-95 transition transform ease-out duration-100'
-                        >
-                            Enroll Now
-                        </button>
+                        {course?.razorPayLink === undefined ? (
+                            <button
+                                className='py-3 w-full flex justify-center lg:w-80 mt-8 bg-zinc-800 text-zinc-100 dark:bg-zinc-100 opacity-50 dark:text-zinc-800 rounded-lg font-medium drop-shadow-lg active:scale-95 transition transform ease-out duration-100 cursor-not-allowed'
+                                disabled
+                            >
+                                Out of Stock
+                            </button>
+                        ) : (
+                            <Link
+                                href={course?.razorPayLink || ''}
+                                target='_blank'
+                                className='py-3 w-full flex justify-center lg:w-80 mt-8 bg-zinc-800 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-800 rounded-lg font-medium drop-shadow-lg active:scale-95 transition transform ease-out duration-100'
+                            >
+                                Enroll Now
+                            </Link>
+                        )}
                     </div>
                 </div>
+                
+                {/* Right Section of the course details */}
 
-                <div className='flex flex-col flex-[0.9_1_0%] text-slate-800 dark:text-zinc-100'>
+                <section className='flex flex-col flex-[0.9_1_0%] text-slate-800 dark:text-zinc-100'>
                     <div className='mt-10'>
                         <h1 className='text-3xl font-semibold'>{course?.title}</h1>
 
@@ -138,11 +152,22 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                             </p>
                         </div>
 
-                        <button
-                            className='py-3 w-full lg:w-80 mt-8 bg-zinc-800 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-800 rounded-lg font-medium drop-shadow-lg active:scale-95 transition transform ease-out duration-100'
-                        >
-                            Enroll Now
-                        </button>
+                        {course?.razorPayLink === undefined ? (
+                            <button
+                                className='py-3 w-full flex justify-center lg:w-80 mt-8 bg-zinc-800 text-zinc-100 dark:bg-zinc-100 opacity-50 dark:text-zinc-800 rounded-lg font-medium drop-shadow-lg active:scale-95 transition transform ease-out duration-100 cursor-not-allowed'
+                                disabled
+                            >
+                                Out of Stock
+                            </button>
+                        ) : (
+                            <Link
+                                href={course?.razorPayLink || ''}
+                                target='_blank'
+                                className='py-3 w-full flex justify-center lg:w-80 mt-8 bg-zinc-800 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-800 rounded-lg font-medium drop-shadow-lg active:scale-95 transition transform ease-out duration-100'
+                            >
+                                Enroll Now
+                            </Link>
+                        )}
                     </div>
 
                     <div className='mt-10 w-full'>
@@ -224,7 +249,7 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                             </TabsContent>
                         </Tabs>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     )

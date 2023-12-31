@@ -57,6 +57,7 @@ export interface Testimonials extends SanityBody {
 }
 
 export interface Courses extends SanityBody {
+    razorPayLink: url;
     _type: "courses";
     description: string;
     title: string;
