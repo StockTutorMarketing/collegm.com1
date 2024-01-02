@@ -90,10 +90,10 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
 
                         {course?.razorPayLink === undefined ? (
                             <button
-                                className='py-3 w-full flex justify-center lg:w-80 mt-8 bg-zinc-800 text-zinc-100 dark:bg-zinc-100 opacity-50 dark:text-zinc-800 rounded-lg font-medium drop-shadow-lg active:scale-95 transition transform ease-out duration-100 cursor-not-allowed'
+                                className='py-3 w-full flex justify-center mt-8 bg-zinc-800 text-zinc-100 dark:bg-zinc-100 opacity-50 dark:text-zinc-800 rounded-lg font-medium drop-shadow-lg active:scale-95 transition transform ease-out duration-100 cursor-not-allowed'
                                 disabled
                             >
-                                Out of Stock
+                                Sold Out
                             </button>
                         ) : (
                             <Link
@@ -106,8 +106,8 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                         )}
                     </div>
                 </div>
-                
-                {/* Right Section of the course details */}
+
+                {/* Left Section of the course details */}
 
                 <section className='flex flex-col flex-[0.9_1_0%] text-slate-800 dark:text-zinc-100'>
                     <div className='mt-10'>
@@ -157,7 +157,7 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                                 className='py-3 w-full flex justify-center lg:w-80 mt-8 bg-zinc-800 text-zinc-100 dark:bg-zinc-100 opacity-50 dark:text-zinc-800 rounded-lg font-medium drop-shadow-lg active:scale-95 transition transform ease-out duration-100 cursor-not-allowed'
                                 disabled
                             >
-                                Out of Stock
+                                Sold Out
                             </button>
                         ) : (
                             <Link
