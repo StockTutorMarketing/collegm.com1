@@ -5,7 +5,7 @@ type Props = {}
 function Refund({ }: Props) {
     return (
         <div className='bg-gray-200 dark:bg-zinc-900 h-screen'>
-            <div className='p-5 max-w-7xl mx-auto bg-white rounded-lg'>
+            <div className='p-5 max-w-7xl mx-auto bg-white dark:bg-zinc-900 rounded-lg'>
                 <h1 className='uppercase text-3xl lg:text-5xl font-bold text-center'>REFUND</h1>
                 <div>
                     <h3>Refund & Cancellation Policy</h3>

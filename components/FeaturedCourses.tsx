@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 import CoursesCard from './CoursesCard';
 import getCourses from '@/utils/getCourses';

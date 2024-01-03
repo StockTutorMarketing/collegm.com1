@@ -19,6 +19,16 @@ export default defineType({
             type: 'string',
         }),
         defineField({
+            name: 'marqueeText',
+            title: 'Marquee Text',
+            type: 'string',
+        }),
+        defineField({
+            name: 'marqueeLink',
+            title: 'Marquee Link',
+            type: 'url',
+        }),
+        defineField({
             name: 'phoneNumber',
             title: 'Phone Number',
             type: 'number',
@@ -32,21 +42,6 @@ export default defineType({
             name: 'email',
             title: 'Email Address',
             type: 'string',
-        }),
-        defineField({
-            name: 'termsAndConditions',
-            title: 'Terms & Conditions',
-            type: 'url',
-        }),
-        defineField({
-            name: 'privacyPolicy',
-            title: 'Privacy Policy',
-            type: 'url',
-        }),
-        defineField({
-            name: 'refundAndCancellation',
-            title: 'Refund & Cancellation',
-            type: 'url',
         }),
         defineField({
             name: 'linkedIn',

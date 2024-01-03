@@ -5,7 +5,7 @@ type Props = {}
 function TermsAndConditions({ }: Props) {
     return (
         <div className='bg-gray-200 dark:bg-zinc-900'>
-            <div className='p-5 max-w-7xl mx-auto bg-white rounded-lg'>
+            <div className='p-5 max-w-7xl mx-auto bg-white dark:bg-zinc-900 rounded-lg'>
                 <h1 className='uppercase text-center text-3xl lg:text-5xl font-bold'>TERMS & Conditions</h1>
                 <div className='space-y-3'>
                     <div className='space-y-2'>
