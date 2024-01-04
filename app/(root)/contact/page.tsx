@@ -56,7 +56,7 @@ function ContactUs({ searchParams }: Props) {
             <div className='max-w-7xl mx-auto my-12 flex flex-col lg:flex-row lg:justify-between'>
                 <div className='flex-[0.5_1_0%]'>
                     <h1 className='text-3xl font-bold text-slate-800 dark:text-zinc-100'>
-                        Get In Touch
+                        Teach with us
                     </h1>
                     <p className='text-slate-600 dark:text-zinc-400 mt-4'>Ask us everything and we would love to hear from you.</p>
 
