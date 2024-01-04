@@ -28,7 +28,6 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
     }
 `;
     const course: Courses = await sanityClient.fetch(query, { slug })
-    console.log(course?.razorPayLink)
     const webInfo = await getWebInfo();
 
     return (
