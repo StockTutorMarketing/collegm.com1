@@ -29,6 +29,12 @@ export default defineType({
             }
         }),
         defineField({
+            name: 'order',
+            title: 'Order ',
+            type: 'number',
+            // description: 'Enter in sequence'
+        }),
+        defineField({
             name: 'isFeaturedCourse',
             title: 'IsFeaturedCourse',
             type: 'boolean',

@@ -2,7 +2,6 @@ import ClientSideRoute from '@/components/ClientSideRoute';
 import CoursesCard from '@/components/CoursesCard'
 import { Courses } from '@/typings';
 import getCourses from '@/utils/getCourses';
-import React from 'react'
 
 type Props = {}
 

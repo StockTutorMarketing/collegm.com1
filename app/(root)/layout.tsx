@@ -20,7 +20,6 @@ export default function RootLayout({
     <html lang="en" className='dark'>
       <body className={inter.className}>
         <Header />
-        <p>Hiiii</p>
         {children}
         <Footer />
       </body>

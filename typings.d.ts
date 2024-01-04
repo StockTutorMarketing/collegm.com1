@@ -66,6 +66,7 @@ export interface Courses extends SanityBody {
     isFeaturedCourse: boolean;
     slug: Slug;
     actualPrice: number;
+    offPercent: number;
     discountedPrice: number;
     cirriculum: string[];
     startingDate: string;

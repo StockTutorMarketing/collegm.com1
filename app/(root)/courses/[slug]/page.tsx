@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import TimelineContainer from '@/components/TimelineContainer'
 import { groq } from 'next-sanity'
@@ -55,21 +54,29 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                             </p>
                         </div>
 
-                        <p className='mt-4 text-2xl font-medium'>
-                            ₹{course?.discountedPrice.toLocaleString()}
-                            {" "}
-
-                            {course?.actualPrice === null &&
-                                <span className='text-xl'>
-                                    {" "}
-                                    ₹<s>{course?.actualPrice}</s>
-                                </span>
+                        <div className='flex items-center justify-between'>
+                            <p className='mt-4 text-2xl font-medium w-full'>
+                                ₹{course?.discountedPrice.toLocaleString()}
+                                {" "}
+                                {course?.actualPrice === undefined
+                                    ? null
+                                    :
+                                    <span className='text-base text-zinc-400'>
+                                        {" "}
+                                        ₹<s>{course?.actualPrice}</s>
+                                    </span>
+                                }
+                            </p>
+                            {course?.offPercent === undefined
+                                ? null
+                                : <span className='ml-auto'>% {course?.offPercent}</span>
                             }
-                        </p>
+                        </div>
 
                         <div className='mt-5 text-lg'>
-                            {course?.startingDate === null &&
-                                <p className=''>
+                            {course?.startingDate === undefined
+                                ? null
+                                : <p className=''>
                                     Starts on:
                                     {" "}
                                     <span className='font-medium'>
@@ -99,7 +106,7 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                             <Link
                                 href={course?.razorPayLink || ''}
                                 target='_blank'
-                                className='py-3 w-full flex justify-center lg:w-80 mt-8 bg-zinc-800 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-800 rounded-lg font-medium drop-shadow-lg active:scale-95 transition transform ease-out duration-100'
+                                className='py-3 w-full flex justify-center mt-8 bg-zinc-800 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-800 rounded-lg font-medium drop-shadow-lg active:scale-95 transition transform ease-out duration-100'
                             >
                                 Enroll Now
                             </Link>
@@ -120,20 +127,29 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                             {course?.rating}
                         </p>
 
-                        <p className='mt-2 text-2xl font-medium'>
-                            ₹{course?.discountedPrice.toLocaleString()}
-                            {" "}
-                            {course?.actualPrice === null &&
-                                <span className='text-xl'>
-                                    {" "}
-                                    ₹<s>{course?.actualPrice}</s>
-                                </span>
+                        <div className='flex items-center'>
+                            <p className='mt-4 text-2xl font-medium w-full'>
+                                ₹{course?.discountedPrice.toLocaleString()}
+                                {" "}
+                                {course?.actualPrice === undefined
+                                    ? null
+                                    :
+                                    <span className='text-base text-zinc-400'>
+                                        {" "}
+                                        ₹<s>{course?.actualPrice}</s>
+                                    </span>
+                                }
+                            </p>
+                            {course?.offPercent === undefined
+                                ? null
+                                : <span className='ml-10'>% {course?.offPercent}</span>
                             }
-                        </p>
+                        </div>
 
                         <div className='mt-5 text-lg'>
-                            {course?.startingDate === null &&
-                                <p className=''>
+                            {course?.startingDate === undefined
+                                ? null
+                                : <p className=''>
                                     Starts on:
                                     {" "}
                                     <span className='font-medium'>
@@ -250,8 +266,8 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                         </Tabs>
                     </div>
                 </section>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 

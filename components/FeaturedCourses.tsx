@@ -1,4 +1,3 @@
-import React from 'react'
 import CoursesCard from './CoursesCard';
 import getCourses from '@/utils/getCourses';
 import ClientSideRoute from './ClientSideRoute';

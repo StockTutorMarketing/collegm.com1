@@ -2,7 +2,6 @@ import { urlFor } from '@/sanity';
 import { Testimonials } from '@/typings';
 import getTestimonials from '@/utils/getTestimonials'
 import Image from 'next/image'
-import React from 'react'
 
 type Props = {}
 

@@ -1,6 +1,5 @@
 import { getWebInfo } from '@/utils/getWebInfo'
 import Link from 'next/link'
-import React from 'react'
 import { SocialIcon } from 'react-social-icons'
 
 type Props = {}
@@ -70,7 +69,7 @@ async function Footer({ }: Props) {
                     />
                 </div>
 
-                <p className='text-slate-500 dark:text-zinc-300 mt-5'>© {new Date().getFullYear()} Collegm, Inc. All rights reserved.</p>
+                <p className='text-slate-500 dark:text-zinc-300 mt-5 text-sm'>Copyright © {new Date().getFullYear()} - LEARN & RISE TECHNOLOGIES PRIVATE LIMITED all rights reserved</p>
             </div>
         </footer>
     )

@@ -1,6 +1,5 @@
 import { urlFor } from '@/sanity'
 import Image from 'next/image'
-import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { TeamMembers } from '@/typings'

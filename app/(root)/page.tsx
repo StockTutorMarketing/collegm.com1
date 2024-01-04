@@ -17,7 +17,7 @@ export default async function Home() {
     <main className="bg-gray-200 dark:bg-zinc-900">
 
       <Marquee
-        className='bg-yellow-400 p-5 !sticky top-[6.5rem] z-40 dark:text-zinc-800'
+        className='bg-yellow-400 p-5 !sticky top-[5.5rem] z-30 dark:text-zinc-800'
         pauseOnHover
       >
         <Link

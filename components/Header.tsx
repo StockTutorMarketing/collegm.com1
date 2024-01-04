@@ -13,7 +13,7 @@ function Header({ }: Props) {
     const [menu, openMenu] = useState(false);
 
     return (
-        <header className='bg-white dark:bg-zinc-800 border-b dark:border-zinc-700 z-10 sticky top-0'>
+        <header className='bg-white dark:bg-zinc-800 border-b dark:border-zinc-700 z-40 sticky top-0'>
             <div className='relative p-5'>
                 <div className='flex items-center justify-between max-w-7xl mx-auto'>
                     <div className="three col sm:hidden" onClick={() => openMenu(!menu)}>
