@@ -42,7 +42,7 @@ function CoursesCard({ course }: Props) {
                         <div className='flex items-center justify-between w-full'>
                             <div className='dark:text-zinc-100'>
                                 <p className='text-sm font-semibold'>{course?.teachers?.name}</p>
-                                <p className='text-sm text-slate-500 dark:text-zinc-100'>{course?.teachers?.joining}</p>
+                                <p className='text-sm text-slate-500 dark:text-zinc-100 lg:w-40 w-28'>{course?.teachers?.joining}</p>
                             </div>
                             <div className='flex flex-col items-end'>
                                 <div className='flex items-center'>
@@ -60,7 +60,7 @@ function CoursesCard({ course }: Props) {
                                     <p className='font-semibold'>₹ {course?.discountedPrice}</p>
                                     {course.offPercent == undefined
                                         ? null
-                                        : <p className='text-red-500'>(% {course.offPercent})</p>
+                                        : <p className='text-red-500 text-sm'>({course.offPercent}% OFF)</p>
                                     }
                                 </div>
                             </div>
