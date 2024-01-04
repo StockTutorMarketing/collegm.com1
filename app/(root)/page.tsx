@@ -21,7 +21,7 @@ export default async function Home() {
         pauseOnHover
       >
         <Link
-          href={webInfo?.marqueeLink}
+          href={webInfo?.marqueeLink || ''}
           target='_blank'
         >
           {webInfo?.marqueeText}
