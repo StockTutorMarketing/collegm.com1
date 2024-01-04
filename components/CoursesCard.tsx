@@ -53,12 +53,15 @@ function CoursesCard({ course }: Props) {
                                     {course.actualPrice == undefined
                                         ? null
                                         :
-                                        <span className='lg:text-xl'>
+                                        <span className='text-sm'>
                                             ₹<s>{course?.actualPrice}</s>
                                         </span>
                                     }
                                     <p className='font-semibold'>₹ {course?.discountedPrice}</p>
-                                    <p className='text-red-500'>(50% OFF)</p>
+                                    {course.offPercent == undefined
+                                        ? null
+                                        : <p className='text-red-500'>(% {course.offPercent})</p>
+                                    }
                                 </div>
                             </div>
                         </div>
