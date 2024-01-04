@@ -126,8 +126,8 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                             {course?.rating}
                         </p>
 
-                        <div className='flex items-center'>
-                            <p className='mt-4 text-2xl font-medium w-full'>
+                        <div className='flex items-center mt-4'>
+                            <p className='text-2xl font-medium'>
                                 ₹{course?.discountedPrice.toLocaleString()}
                                 {" "}
                                 {course?.actualPrice === undefined
@@ -141,7 +141,7 @@ async function CourseDetailsPage({ params: { slug } }: Props) {
                             </p>
                             {course?.offPercent === undefined
                                 ? null
-                                : <span className='ml-10'>% {course?.offPercent}</span>
+                                : <span className='ml-10 text-2xl text-red-400'>% {course?.offPercent}</span>
                             }
                         </div>
 
