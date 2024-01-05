@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { transporter } from '@/lib/transporter'
 import Submit from '@/components/ui/Submit'
+import { getWebInfo } from '@/utils/getWebInfo'
 
 type Props = {
     searchParams?: { [key: string]: string | string[] | undefined };
@@ -9,7 +10,9 @@ type Props = {
 
 const user = process.env.GOOGLE_USER_EMAIL
 
-function ContactUs({ searchParams }: Props) {
+async function ContactUs({ searchParams }: Props) {
+
+    const webInfo = await getWebInfo();
 
     const sendMailToSupport = async (e: FormData) => {
         'use server'
@@ -63,7 +66,7 @@ function ContactUs({ searchParams }: Props) {
                     <div className='mt-10 text-zinc-700 dark:text-zinc-100 space-y-6'>
                         <p className='flex items-start'>
                             <FontAwesomeIcon icon={faLocationDot} className='h-7 w-7 mr-3 text-zinc-800 dark:text-zinc-100 flex-shrink-0' />
-                            FA- 12, 1st Floor Crown Plaza Mall, Sector 15A, Main Mathura Road, Faridabad, Haryana - 121007.
+                            {webInfo?.address}
                         </p>
 
                         <p className='flex items-center'>

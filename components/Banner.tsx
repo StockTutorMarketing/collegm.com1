@@ -58,21 +58,21 @@ function Banner({ }: Props) {
 
                 <div className='my-8 space-y-5 lg:flex items-center justify-between lg:space-y-0'>
                     <div className='lg:max-w-xs text-slate-800 dark:text-zinc-100'>
-                        <h3 className='text-lg font-semibold text-uppercase'>1. Live Learning Experience</h3>
+                        <h3 className='text-lg font-semibold text-uppercase'>Live Learning Experience</h3>
                         <p className=' text-sm'>
-                            - Dive into real-time, interactive classes led by industry experts to enhance your understanding of financial markets.
+                            Dive into real-time, interactive classes led by industry experts to enhance your understanding of financial markets.
                         </p>
                     </div>
                     <div className='lg:max-w-xs text-slate-800 dark:text-zinc-100'>
-                        <h3 className='text-lg font-semibold text-uppercase'>2. Community Connection:</h3>
+                        <h3 className='text-lg font-semibold text-uppercase'>Community Connection:</h3>
                         <p className='text-sm'>
-                            - Join a vibrant communities of like-minded individuals, fostering collaboration, idea exchange, and continuous learning.
+                            Join a vibrant communities of like-minded individuals, fostering collaboration, idea exchange, and continuous learning.
                         </p>
                     </div>
                     <div className='lg:max-w-xs text-slate-800 dark:text-zinc-100'>
-                        <h3 className='text-lg font-semibold text-uppercase'>3. Expert-Led Courses:</h3>
+                        <h3 className='text-lg font-semibold text-uppercase'>Expert-Led Courses:</h3>
                         <p className='text-sm'>
-                            - Gain insights from seasoned professionals with hands-on market experience, guiding you through practical strategies for success.
+                            Gain insights from seasoned professionals with hands-on market experience, guiding you through practical strategies for success.
                         </p>
                     </div>
                 </div>
