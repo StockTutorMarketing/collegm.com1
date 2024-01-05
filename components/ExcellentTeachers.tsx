@@ -15,7 +15,7 @@ async function ExcellentTeachers({ }: Props) {
             <div className='md:text-center'>
                 <p className='text-green-800 dark:text-green-600 font-semibold text-sm uppercase'>Learn from</p>
 
-                <h2 className='text-3xl lg:text-4xl font-bold text-slate-800 dark:text-zinc-100 mt-6'>Teachers</h2>
+                <h2 className='text-3xl lg:text-4xl font-bold text-slate-800 dark:text-zinc-100 mt-6'>Experts</h2>
 
                 <p className='text-slate-700 dark:text-zinc-300 mt-8 md:max-w-md md:text-lg lg:max-w-2xl lg:text-xl mx-auto'>Develop real-world skills with our courses designed by industry practitioners.</p>
             </div>
