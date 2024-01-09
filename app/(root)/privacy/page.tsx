@@ -12,7 +12,7 @@ function Privacy({ }: Props) {
                             Privacy Policy
                         </h3>
                         <p className='border-l-2 border-zinc-900 dark:border-zinc-100 p-2'>
-                            MDM Madhubani Technologies Private Limited (the Company/ColleGm ) is concerned about the privacy of the data and information of the users accessing the website ColleGm or otherwise engaging with the Company through the Web.
+                            LEARN & RISE TECHNOLOGIES PRIVATE LIMITED (the Company/ColleGm ) is concerned about the privacy of the data and information of the users accessing the website ColleGm or otherwise engaging with the Company through the Web.
                         </p>
                         <p className='border-l-2 border-zinc-900 dark:border-zinc-100 p-2'>
                             ColleGm is committed to maintaining the sanctity of all information and data in their possession and is committed to protect the privacy and security of all users&apos; data. ColleGm is a Web based platform used by teachers, trainers, educators, coaches etc., to set up their online presence, build a personal brand, launch a cohort-based course and build their own community of learners.
