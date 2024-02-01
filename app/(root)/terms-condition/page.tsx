@@ -88,13 +88,9 @@ function TermsAndConditions({ }: Props) {
                             8. Governing Law
                         </h3>
                         <p className='border-l-2 border-zinc-900 dark:border-zinc-100 p-2'>
-                            Any claim relating to Company&apos;s web site shall be governed by the laws of the State of New York without regard to its conflict of law provisions.
+                            Any claim relating to Company&apos;s website shall be governed by the laws of Indian Government without regard to its conflict of law provisions.
                         </p>
                     </div>
-
-
-
-
                 </div>
             </div>
         </div>
