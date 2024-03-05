@@ -5,13 +5,16 @@ function Refund({ }: Props) {
     return (
         <div className='bg-gray-200 dark:bg-zinc-900 h-screen'>
             <div className='p-5 max-w-7xl mx-auto bg-white dark:bg-zinc-900 rounded-lg'>
-                <h1 className='uppercase text-3xl lg:text-5xl font-bold text-center'>REFUND</h1>
+                <h1 className='uppercase text-3xl lg:text-5xl font-bold text-center'>Refund and Cancellation Policy</h1>
                 <div className='space-y-2'>
                     <h3 className='text-3xl'>
                         Cancellation
                     </h3>
                     <p className='border-l-2 border-zinc-900 dark:border-zinc-100 p-2'>
-                        Cancellation of any subscription is valid if requested before 14 days from the start of the course or program. After this period, no refunds will be applicable.
+                        Cancellation of any subscription is valid if requested before 14 days from the start of the course or program.
+                    </p>
+                    <p className='border-l-2 border-zinc-900 dark:border-zinc-100 p-2'>
+                        After this period, no refunds will be applicable.
                     </p>
                 </div>
                 <div className='space-y-2'>
