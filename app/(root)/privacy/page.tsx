@@ -4,7 +4,7 @@ type Props = {}
 function Privacy({ }: Props) {
     return (
         <div className='bg-gray-200 dark:bg-zinc-900'>
-            <div className='p-5 max-w-7xl mx-auto bg-white dark:bg-zinc-900 rounded-lg'>
+            <div className='p-5 max-w-7xl mx-auto bg-white dark:bg-zinc-900 rounded-lg space-y-5'>
                 <h1 className='uppercase text-3xl lg:text-5xl font-bold text-center'>PRIVACY POLICY</h1>
                 <div className='space-y-3'>
                     <div className='space-y-2'>

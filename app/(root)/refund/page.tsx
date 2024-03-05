@@ -4,7 +4,7 @@ type Props = {}
 function Refund({ }: Props) {
     return (
         <div className='bg-gray-200 dark:bg-zinc-900 h-screen'>
-            <div className='p-5 max-w-7xl mx-auto bg-white dark:bg-zinc-900 rounded-lg'>
+            <div className='p-5 max-w-7xl mx-auto bg-white dark:bg-zinc-900 rounded-lg space-y-5'>
                 <h1 className='uppercase text-3xl lg:text-5xl font-bold text-center'>Refund and Cancellation Policy</h1>
                 <div className='space-y-2'>
                     <h3 className='text-3xl'>
@@ -19,7 +19,7 @@ function Refund({ }: Props) {
                 </div>
                 <div className='space-y-2'>
                     <h3 className='text-3xl'>
-                        Refunds for Partial Acces
+                        Refunds for Partial Access
                     </h3>
                     <p className='border-l-2 border-zinc-900 dark:border-zinc-100 p-2'>
                         If any access is given to the user (e.g., videos, PDFs, codes, community, or any textual study material), a deduction of 30% will be applicable on the refund amount.
@@ -48,7 +48,7 @@ function Refund({ }: Props) {
                     </p>
                 </div>
                 <div className='space-y-2 mt-2'>
-                    <p className='text-lg   border-l-2 border-zinc-900 dark:border-zinc-100 p-2'>
+                    <p className='text-lg p-2'>
                         <span className="font-semibold">
                             Note: {" "}
                         </span>
