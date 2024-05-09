@@ -69,7 +69,7 @@ async function Footer({ }: Props) {
                     />
                 </div>
 
-                <p className='text-slate-500 dark:text-zinc-300 mt-5 text-sm'>Copyright © {new Date().getFullYear()} - LEARN & RISE TECHNOLOGIES PRIVATE LIMITED all rights reserved</p>
+                <p className='text-slate-500 dark:text-zinc-300 mt-5 text-sm'>Copyright © {new Date().getFullYear()} - MDM MADHUBANI TECHNOLOGIES PRIVATE LIMITED all rights reserved</p>
             </div>
         </footer>
     )
